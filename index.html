@@ -3,93 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vaylee - Adopt Me Trading</title>
 
+    <!-- Zeyada font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #fff7fc;
-            color: #333;
+            background: #f7f2ff;
+            color: #3d3450;
         }
+
+        /* NAVIGATION */
 
         header {
             background: white;
-            padding: 20px 50px;
+            height: 80px;
+            padding: 0 50px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            justify-content: space-between;
+
+            box-shadow: 0 2px 15px rgba(100, 70, 150, 0.12);
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d66ba0;
+            font-family: "Zeyada", cursive;
+            font-size: 52px;
+            color: #9b7bc7;
+            line-height: 1;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
         }
 
         nav a {
-            margin-left: 25px;
             text-decoration: none;
-            color: #555;
-            font-weight: 500;
+            color: #665578;
+            font-weight: 600;
+            transition: 0.2s;
         }
 
+        nav a:hover {
+            color: #9b7bc7;
+        }
+
+        /* HERO */
+
         .hero {
+            min-height: calc(100vh - 80px);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             text-align: center;
-            padding: 100px 20px;
+
+            padding: 40px 20px;
         }
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
-            color: #d66ba0;
+            font-family: "Zeyada", cursive;
+            font-size: 72px;
+            font-weight: normal;
+            color: #8d6bb8;
+            margin: 0;
         }
 
         .hero p {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 35px;
+            font-size: 19px;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #70647d;
+            margin: 10px 0 35px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .button {
             display: inline-block;
-            background: #d66ba0;
-            color: white;
-            padding: 15px 30px;
+
+            padding: 14px 28px;
+
             border-radius: 12px;
+
+            background: #9b7bc7;
+            color: white;
+
             text-decoration: none;
-            font-size: 18px;
             font-weight: bold;
+            font-size: 16px;
+
+            transition: 0.2s;
         }
 
         .button:hover {
-            opacity: 0.85;
+            background: #8564b0;
+            transform: translateY(-2px);
         }
+
+        .button.secondary {
+            background: white;
+            color: #8d6bb8;
+            border: 2px solid #b69bd8;
+        }
+
+        .button.secondary:hover {
+            background: #f0e8fb;
+        }
+
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="logo">Vaylee</div>
+
+        <div class="logo">
+            Vaylee
+        </div>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Browse</a>
-            <a href="#">Login</a>
+            <a href="index.html">Home</a>
+            <a href="listings.html">Listings</a>
+            <a href="pets.html">Browse Pets</a>
         </nav>
+
     </header>
 
-    <section class="hero">
-        <h1>Welcome to Vaylee</h1>
+
+    <main class="hero">
+
+        <h1>Vaylee</h1>
 
         <p>
-            A simple and safe place for Adopt Me players to discover and trade pets.
+            Find trades, discover pets, and connect with other Adopt Me players.
         </p>
 
-        <a href="#" class="button">Browse Pets</a>
-    </section>
+        <div class="buttons">
+
+            <a class="button" href="listings.html">
+                View Listings
+            </a>
+
+            <a class="button secondary" href="pets.html">
+                Browse Pets
+            </a>
+
+            <a class="button secondary" href="make-listing.html">
+                Make Listing
+            </a>
+
+        </div>
+
+    </main>
 
 </body>
 </html>
