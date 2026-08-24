@@ -499,7 +499,38 @@
 
     <button
         class="button done"
-        onclick="finishSelection()">
+        onclick="function finishSelection() {
+
+    const selected =
+        document.querySelectorAll(".pet-card.selected");
+
+    if (selected.length === 0) {
+
+        alert("Please select at least one pet.");
+
+        return;
+
+    }
+
+    const selectedPets = [];
+
+    selected.forEach(pet => {
+
+        selectedPets.push({
+            name: pet.dataset.name,
+            rarity: pet.querySelector(".pet-rarity").textContent,
+            image: pet.querySelector(".pet-image").textContent
+        });
+
+    });
+
+    localStorage.setItem(
+        "vayleeSelectedPets",
+        JSON.stringify(selectedPets)
+    );
+
+    window.location.href = "listings.html";
+}
 
         Add Selected Pets
 
