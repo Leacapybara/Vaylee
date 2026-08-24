@@ -689,3 +689,40 @@ nav a:hover {
         font-size: 75px;
     }
 }
+/* FOOTER */
+
+footer {
+    background: white;
+
+    border-top: 1px solid var(--border);
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.footer-logo {
+    font-family: "Zeyada", cursive;
+
+    font-size: 35px;
+
+    color: var(--lavender);
+
+    margin-bottom: 5px;
+}
+
+.footer-disclaimer {
+    max-width: 800px;
+
+    margin: 8px auto 0;
+
+    font-size: 12px;
+
+    color: #9a8ba6;
+}
