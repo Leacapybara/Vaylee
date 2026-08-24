@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaylee - Listings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f2ff;
+            color: #3d3450;
+        }
+
+        header {
+            background: white;
+            height: 80px;
+            padding: 0 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            box-shadow: 0 2px 15px rgba(100, 70, 150, 0.12);
+        }
+
+        .logo {
+            font-family: "Zeyada", cursive;
+            font-size: 52px;
+            color: #9b7bc7;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #665578;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #9b7bc7;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-family: "Zeyada", cursive;
+            font-size: 60px;
+            font-weight: normal;
+            color: #8d6bb8;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #70647d;
+            margin-bottom: 40px;
+        }
+
+        /* TRADE CARD */
+
+        .listing {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+
+            box-shadow: 0 5px 20px rgba(100, 70, 150, 0.12);
+        }
+
+        .listing-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .trade {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .offer {
+            background: #f7f2ff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-height: 180px;
+        }
+
+        .offer h3 {
+            margin-top: 0;
+            color: #8d6bb8;
+        }
+
+        .pets {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* PET */
+
+        .pet {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid #dfd1ef;
+            cursor: pointer;
+        }
+
+        .pet img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        /* HOVER INFORMATION */
+
+        .pet-info {
+            display: none;
+
+            position: absolute;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            background: #4d405c;
+            color: white;
+
+            padding: 8px 12px;
+            border-radius: 8px;
+
+            width: 130px;
+            z-index: 10;
+
+            font-size: 13px;
+        }
+
+        .pet:hover .pet-info {
+            display: block;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 30px;
+            color: #9b7bc7;
+        }
+
+        .view-button {
+            display: block;
+            width: 140px;
+            margin: 20px auto 0;
+
+            padding: 10px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #9b7bc7;
+            color: white;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background: #8564b0;
+        }
+
+        @media (max-width: 700px) {
+
+            .trade {
+                grid-template-columns: 1fr;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Vaylee
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="pets.html">Browse Pets</a>
+    </nav>
+
+</header>
+
+
+<div class="page">
+
+    <h1 class="page-title">
+        View Listings
+    </h1>
+
+    <p class="subtitle">
+        See what other Adopt Me players are offering and looking for.
+    </p>
+
+
+    <!-- EXAMPLE LISTING -->
+
+    <div class="listing">
+
+        <div class="listing-title">
+            Example Trade
+        </div>
+
+        <div class="trade">
+
+            <!-- OFFER -->
+
+            <div class="offer">
+
+                <h3>Offering</h3>
+
+                <div class="pets">
+
+                    <div class="pet">
+
+                        <!-- Temporary example image -->
+                        🦄
+
+                        <div class="pet-info">
+                            Unicorn<br>
+                            Ultra-Rare
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARROW -->
+
+            <div class="arrow">
+                →
+            </div>
+
+
+            <!-- LOOKING FOR -->
+
+            <div class="offer">
+
+                <h3>Looking For</h3>
+
+                <div class="pets">
+
+                    <div class="pet">
+
+                        <!-- Temporary example image -->
+                        🐉
+
+                        <div class="pet-info">
+                            Bat Dragon<br>
+                            Legendary
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="view-button">
+            View Trade
+        </button>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
