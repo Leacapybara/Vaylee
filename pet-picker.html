@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaylee - Choose Pets</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Lilita+One&family=Zeyada&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            background: #f5efff;
+
+            color: #493c59;
+
+            font-family: "Dosis", sans-serif;
+            font-weight: 800;
+        }
+
+
+        /* HEADER */
+
+        header {
+            height: 82px;
+
+            background: white;
+
+            padding: 0 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            box-shadow: 0 4px 20px rgba(110, 75, 160, 0.12);
+        }
+
+
+        .logo {
+
+            font-family: "Zeyada", cursive;
+
+            font-size: 55px;
+
+            font-weight: normal;
+
+            color: #9672c2;
+
+            text-decoration: none;
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 30px;
+        }
+
+
+        nav a {
+
+            color: #655675;
+
+            text-decoration: none;
+
+            font-size: 17px;
+        }
+
+
+        nav a:hover {
+
+            color: #9672c2;
+        }
+
+
+        /* PAGE */
+
+        .page {
+
+            width: min(1000px, 92%);
+
+            margin: auto;
+
+            padding: 50px 0 80px;
+        }
+
+
+        .title {
+
+            font-family: "Lilita One", cursive;
+
+            font-size: 45px;
+
+            font-weight: normal;
+
+            text-align: center;
+
+            color: #8262aa;
+
+            margin: 0;
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #776883;
+
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* SEARCH */
+
+        .search {
+
+            width: 100%;
+
+            padding: 15px 20px;
+
+            border-radius: 14px;
+
+            border: 2px solid #e3d6f2;
+
+            background: white;
+
+            font-family: "Dosis", sans-serif;
+
+            font-weight: 800;
+
+            font-size: 17px;
+
+            outline: none;
+
+            margin-bottom: 30px;
+        }
+
+
+        .search:focus {
+
+            border-color: #b99bd7;
+        }
+
+
+        /* PET GRID */
+
+        .pet-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        /* PET CARD */
+
+        .pet-card {
+
+            background: white;
+
+            border: 2px solid #e7daf4;
+
+            border-radius: 18px;
+
+            padding: 20px 10px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .pet-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color: #b99bd7;
+
+            box-shadow: 0 6px 18px rgba(130, 95, 170, 0.18);
+        }
+
+
+        .pet-image {
+
+            font-size: 55px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .pet-name {
+
+            font-size: 18px;
+
+            color: #554563;
+        }
+
+
+        .pet-rarity {
+
+            font-size: 14px;
+
+            color: #a083c6;
+
+            margin-top: 3px;
+        }
+
+
+        /* SELECTED */
+
+        .pet-card.selected {
+
+            border: 3px solid #9672c2;
+
+            background: #f1e8fb;
+        }
+
+
+        /* BOTTOM BAR */
+
+        .bottom-bar {
+
+            position: fixed;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            background: white;
+
+            box-shadow: 0 -4px 20px rgba(100, 70, 150, 0.12);
+
+            padding: 15px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+
+        .button {
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding: 12px 28px;
+
+            font-family: "Dosis", sans-serif;
+
+            font-weight: 800;
+
+            font-size: 17px;
+
+            cursor: pointer;
+        }
+
+
+        .cancel {
+
+            background: #eee5f7;
+
+            color: #715d82;
+        }
+
+
+        .done {
+
+            background: #9672c2;
+
+            color: white;
+        }
+
+
+        .button:hover {
+
+            transform: translateY(-2px);
+        }
+
+
+        @media (max-width: 700px) {
+
+            .pet-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+
+                padding: 0 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        Vaylee
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="listings.html">
+            Listings
+        </a>
+
+        <a href="pets.html">
+            Browse Pets
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="page">
+
+
+    <h1 class="title">
+        Choose Your Pets
+    </h1>
+
+
+    <p class="subtitle">
+        Select the pets you want to add to your offer.
+    </p>
+
+
+    <input
+        class="search"
+        id="search"
+        type="text"
+        placeholder="Search pets..."
+    >
+
+
+    <div class="pet-grid" id="petGrid">
+
+
+        <div class="pet-card" data-name="Unicorn">
+
+            <div class="pet-image">
+                🦄
+            </div>
+
+            <div class="pet-name">
+                Unicorn
+            </div>
+
+            <div class="pet-rarity">
+                Ultra-Rare
+            </div>
+
+        </div>
+
+
+        <div class="pet-card" data-name="Bat Dragon">
+
+            <div class="pet-image">
+                🐉
+            </div>
+
+            <div class="pet-name">
+                Bat Dragon
+            </div>
+
+            <div class="pet-rarity">
+                Legendary
+            </div>
+
+        </div>
+
+
+        <div class="pet-card" data-name="Dog">
+
+            <div class="pet-image">
+                🐶
+            </div>
+
+            <div class="pet-name">
+                Dog
+            </div>
+
+            <div class="pet-rarity">
+                Common
+            </div>
+
+        </div>
+
+
+        <div class="pet-card" data-name="Cat">
+
+            <div class="pet-image">
+                🐱
+            </div>
+
+            <div class="pet-name">
+                Cat
+            </div>
+
+            <div class="pet-rarity">
+                Common
+            </div>
+
+        </div>
+
+
+        <div class="pet-card" data-name="Red Fox">
+
+            <div class="pet-image">
+                🦊
+            </div>
+
+            <div class="pet-name">
+                Red Fox
+            </div>
+
+            <div class="pet-rarity">
+                Uncommon
+            </div>
+
+        </div>
+
+
+        <div class="pet-card" data-name="Rabbit">
+
+            <div class="pet-image">
+                🐰
+            </div>
+
+            <div class="pet-name">
+                Rabbit
+            </div>
+
+            <div class="pet-rarity">
+                Rare
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+<div class="bottom-bar">
+
+    <button
+        class="button cancel"
+        onclick="window.location.href='listings.html'">
+
+        Cancel
+
+    </button>
+
+
+    <button
+        class="button done"
+        onclick="finishSelection()">
+
+        Add Selected Pets
+
+    </button>
+
+</div>
+
+
+
+<script>
+
+
+    /* SELECTING PETS */
+
+    const pets = document.querySelectorAll(".pet-card");
+
+
+    pets.forEach(pet => {
+
+        pet.addEventListener("click", () => {
+
+            pet.classList.toggle("selected");
+
+        });
+
+    });
+
+
+
+    /* SEARCH */
+
+    const search = document.getElementById("search");
+
+
+    search.addEventListener("input", () => {
+
+        const searchText =
+            search.value.toLowerCase();
+
+
+        pets.forEach(pet => {
+
+            const name =
+                pet.dataset.name.toLowerCase();
+
+
+            if (name.includes(searchText)) {
+
+                pet.style.display = "";
+
+            } else {
+
+                pet.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+
+
+    /* DONE */
+
+    function finishSelection() {
+
+        const selected =
+            document.querySelectorAll(".pet-card.selected");
+
+
+        if (selected.length === 0) {
+
+            alert("Please select at least one pet.");
+
+            return;
+
+        }
+
+
+        alert(
+            selected.length +
+            " pet(s) selected!"
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
